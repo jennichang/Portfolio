@@ -2,6 +2,7 @@ package com.theironyard.controllers;
 
 import com.theironyard.entities.User;
 import com.theironyard.services.UserRepository;
+import com.theironyard.utilities.PasswordStorage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.*;
 import org.springframework.stereotype.*;
@@ -27,8 +28,7 @@ public class PortfolioStartController {
     public User login(String username, String password, HttpSession session, HttpServletResponse response) throws Exception {
         User user = users.findFirstByName(username);
         if (user == null) {
-            user = new User(username, PasswordStorage.createHash(password));
-            users.save(user);
+            response.sendRedirect("/signUp");
         } else if (!PasswordStorage.verifyPassword(password, user.getPassword())) {
             throw new Exception("Wrong password");
         }
@@ -36,6 +36,12 @@ public class PortfolioStartController {
         response.sendRedirect("/");
         return user;
     }
+
+    @RequestMapping(path = "/", method = RequestMethod.GET)
+    public String signup() {
+        return "signup";
+    }
+
 
 
 }
