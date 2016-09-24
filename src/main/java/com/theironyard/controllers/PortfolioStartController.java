@@ -42,6 +42,14 @@ public class PortfolioStartController {
         return "signup";
     }
 
+    @RequestMapping(path = "/signup", method = RequestMethod.POST)
+    public String signupPost(String firstName, String lastName, String email, String password) {
+        User user = new User(firstName, lastName, email, password);
+        users.save(user);
+        return "redirect:/";
+    }
+
+
 
 
 }
