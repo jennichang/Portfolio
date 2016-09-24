@@ -25,14 +25,14 @@ public class PortfolioStartController {
     }
 
     @RequestMapping(path = "/login", method = RequestMethod.POST)
-    public User login(String firstName, String password, HttpSession session, HttpServletResponse response) throws Exception {
-        User user = users.findFirstByName(firstName);
+    public User login(String email, String password, HttpSession session, HttpServletResponse response) throws Exception {
+        User user = users.findFirstByEmail(email);
         if (user == null) {
             response.sendRedirect("/signup");
         } else if (!PasswordStorage.verifyPassword(password, user.getPassword())) {
             throw new Exception("Wrong password");
         }
-        session.setAttribute("username", firstName);
+        session.setAttribute("username", email);
         response.sendRedirect("/");
         return user;
     }
