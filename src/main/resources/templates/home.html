@@ -37,8 +37,17 @@
 
 </head>
 <body>
+<!--{{^user}}-->
+{{#user}}
 {{> partials/navbar}}
 
+Welcome {{firstName}}!
+{{/user}}
+<!--{{/user}}-->
+
+<!--{{#user}}-->
+<!--{{> partials/navbarSignedIn}}-->
+<!--{{/user}}-->
 
 <div class="container">
     <br>
