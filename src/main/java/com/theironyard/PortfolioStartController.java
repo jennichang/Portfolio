@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.*;
 @EnableAutoConfiguration
 public class PortfolioStartController {
 
-    @RequestMapping("/")
+    @RequestMapping(path = "/")
     @ResponseBody
     String home() {
-        return "Hello World!";
+        return "Hello, world!";
     }
 
 }
