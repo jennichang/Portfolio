@@ -83,7 +83,7 @@ public class PortfolioStartController {
         session.setAttribute("update", update);
         Update addedUpdate = new Update(update, dateTime);
         updates.save(addedUpdate);
-        return "redirect:/update";
+        return "redirect:/updates";
     }
 
 

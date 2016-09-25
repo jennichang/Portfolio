@@ -134,14 +134,14 @@ opacity: 0;
                 <li ><a href="/portfolio">Portfolio<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-book"></span></a></li>
                 <li ><a href="/resume">Resume<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list-alt"></span></a></li>
                 <li ><a href="/updates">Updates<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cloud-upload"></span></a></li>
-                <li ><a href="/contact">Contact<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
+                <!--<li ><a href="/contact">Contact<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>-->
                 <br>
                 {{^user}}
-                <li ><a href="/login">Sign In<span style="font-size:16px;" class="pull-right hidden-xs showopacity"></span></a></li>
+                <li ><a href="/login">Sign In<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-off"></span></a></li>
                 {{/user}}
 
                 {{#user}}
-                <li ><a href="/logout">Sign Out<span style="font-size:16px;" class="pull-right hidden-xs showopacity"></span></a></li>
+                <li ><a href="/logout">Sign Out<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-off"></span></a></li>
                 {{/user}}
             </ul>
         </div>
