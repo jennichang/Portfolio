@@ -59,10 +59,10 @@ public class PortfolioStartController {
     }
 
     @RequestMapping(path = "/signup", method = RequestMethod.POST)
-    public String signupPost(String firstName, String lastName, String email, String password) {
-        User user = new User(firstName, lastName, email, password);
+    public String signupPost(String firstName, String lastName, String email, String password) throws Exception {
+        User user = new User(firstName, lastName, email, PasswordStorage.createHash(password));
         users.save(user);
-        return "redirect:/";
+        return "redirect:/user";
     }
 
     @RequestMapping(path = "/logout", method = RequestMethod.POST)
