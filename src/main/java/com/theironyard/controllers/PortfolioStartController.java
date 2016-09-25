@@ -22,12 +22,21 @@ public class PortfolioStartController {
 
     @RequestMapping(path = "/", method = RequestMethod.GET)
     public String home(HttpSession session, Model model) {
+//        String email = (String) session.getAttribute("email");
+//        User user = users.findFirstByEmail(email);
+//        if (user != null) {
+//            model.addAttribute("user", user);
+//        } user = new User("Visitor", "no user", "no user", "no user");
+//        model.addAttribute("user", user);
+        return "home";
+    }
+
+    @RequestMapping(path = "/user", method = RequestMethod.GET)
+    public String user(HttpSession session, Model model) {
         String email = (String) session.getAttribute("email");
         User user = users.findFirstByEmail(email);
-        if (user != null) {
             model.addAttribute("user", user);
-        }
-        return "home";
+        return "loggedIn";
     }
 
 
@@ -40,7 +49,7 @@ public class PortfolioStartController {
             throw new Exception("Wrong password");
         }
         session.setAttribute("username", email);
-        response.sendRedirect("/");
+        response.sendRedirect("/loggedin");
         return user;
     }
 
