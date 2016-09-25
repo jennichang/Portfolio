@@ -41,7 +41,7 @@ public class PortfolioStartController {
 
 
     @RequestMapping(path = "/login", method = RequestMethod.POST)
-    public User login(String email, String password, HttpSession session, HttpServletResponse response) throws Exception {
+    public String login(String email, String password, HttpSession session, HttpServletResponse response) throws Exception {
         User user = users.findFirstByEmail(email);
         if (user == null) {
             response.sendRedirect("/signup");
@@ -49,8 +49,7 @@ public class PortfolioStartController {
             throw new Exception("Wrong password");
         }
         session.setAttribute("username", email);
-        response.sendRedirect("/user");
-        return user;
+        return "redirect:/user";
     }
 
     @RequestMapping(path = "/signup", method = RequestMethod.GET)
