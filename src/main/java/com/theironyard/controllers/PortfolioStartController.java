@@ -72,7 +72,7 @@ public class PortfolioStartController {
         User user = users.findFirstByEmail(email);
         model.addAttribute("user", user);
         model.addAttribute("updates", updateList); // give list of messages to model
-        return "updates";
+        return "update";
     }
 
 
@@ -83,7 +83,7 @@ public class PortfolioStartController {
         session.setAttribute("update", update);
         Update addedUpdate = new Update(update, dateTime);
         updates.save(addedUpdate);
-        return "redirect:/updates";
+        return "redirect:/update";
     }
 
 

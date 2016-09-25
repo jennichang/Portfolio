@@ -1,20 +1,32 @@
 <style>
-.list {
+.containerCustom {
+  border: 1px solid #FFFFFF;
+  height: 150px;
+  width: 400px;
+  padding-left: 3px;
+}
 
-list-style: none;
-padding: 20px 0 20px;
-position: absolute;
+.containerCustom > ol
+{
+  display: flex;
+  flex-flow: column wrap;
+  height: inherit;
+  width: inherit;
+  margin:0;
+}
+
+.containerCustom > ol > li
+{
+  flex: 0 0 auto;
 }
 </style>
 
-<div class="container">
+
     <div class="page-header text-center">
         <h2 id="updatelist">Recent Updates</h2>
     </div>
-    <ol class="list">
+    <ol class="containerCustom">
         {{#updates}}
         <li>{{text}} ; <strong>{{dateTime}}</strong></li>
         {{/updates}}
     </ol>
-
-</div>
