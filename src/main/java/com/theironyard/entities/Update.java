@@ -1,6 +1,9 @@
 package com.theironyard.entities;
 
+import org.apache.tomcat.jni.Local;
+
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -19,8 +22,7 @@ public class Update {
     public Update() {
     }
 
-    public Update(int id, String text, LocalDateTime dateTime) {
-        this.id = id;
+    public Update(String text, LocalDateTime dateTime) {
         this.text = text;
         this.dateTime = dateTime;
     }
