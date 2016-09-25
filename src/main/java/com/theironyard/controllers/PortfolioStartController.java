@@ -1,6 +1,8 @@
 package com.theironyard.controllers;
 
+import com.theironyard.entities.Update;
 import com.theironyard.entities.User;
+import com.theironyard.services.UpdateRepository;
 import com.theironyard.services.UserRepository;
 import com.theironyard.utilities.PasswordStorage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.List;
 
 @Controller
 @EnableAutoConfiguration
@@ -19,6 +22,9 @@ public class PortfolioStartController {
 
     @Autowired
     UserRepository users;
+
+    @Autowired
+    UpdateRepository updates;
 
 
     @RequestMapping(path = "/", method = RequestMethod.GET)
@@ -52,7 +58,9 @@ public class PortfolioStartController {
     }
 
     @RequestMapping(path = "/updates", method = RequestMethod.GET)
-    public String updateGet() {
+    public String home(Model model) { // have parameter list contain model
+        List<Update> updateList = (List) updates.findAll(); // put into list everything in message repository
+        model.addAttribute("updates", updateList); // give list of messages to model
         return "updates";
     }
 
