@@ -59,6 +59,11 @@ public class PortfolioStartController {
         return "portfolio";
     }
 
+    @RequestMapping(path = "/signup", method = RequestMethod.GET)
+    public String signup() {
+        return "signup";
+    }
+
     @RequestMapping(path = "/updates", method = RequestMethod.GET)
     public String home(Model model) { // have parameter list contain model
         List<Update> updateList = (List) updates.findAll(); // put into list everything in message repository
@@ -72,6 +77,14 @@ public class PortfolioStartController {
         Update addedUpdate = new Update(update, dateTime);
         updates.save(addedUpdate);
         return "redirect:/updates";
+    }
+
+    @RequestMapping(path = "/signup", method = RequestMethod.POST)
+    public String signupPost(HttpSession session, String firstName, String lastName, String email, String password) throws Exception {
+        User user = new User(firstName, lastName, email, PasswordStorage.createHash(password));
+        users.save(user);
+        session.setAttribute("email", email);
+        return "redirect:/";
     }
 
 
@@ -116,22 +129,14 @@ public class PortfolioStartController {
 
 
 
-    @RequestMapping(path = "/signup", method = RequestMethod.GET)
-    public String signup() {
-        return "signup";
-    }
+
 
     @RequestMapping(path = "/resume", method = RequestMethod.GET)
     public String resume() {
         return "resume";
     }
 
-    @RequestMapping(path = "/signup", method = RequestMethod.POST)
-    public String signupPost(String firstName, String lastName, String email, String password) throws Exception {
-        User user = new User(firstName, lastName, email, PasswordStorage.createHash(password));
-        users.save(user);
-        return "redirect:/user";
-    }
+
 
     @RequestMapping("/logout")
     public void logout(HttpSession session, HttpServletResponse response) throws IOException {
