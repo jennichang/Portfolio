@@ -4,8 +4,8 @@
     {{> partials/bootstrapLink}}
 
     <style>
-        .contact-form{ margin-top:15px;}
-.contact-form .textarea{ min-height:220px; resize:none;}
+.contact-form{ margin-top:15px;}
+.contact-form .textarea{ min-height:100px; resize:none;}
 .form-control{ box-shadow:none; border-color:#eee; height:49px;}
 .form-control:focus{ box-shadow:none; border-color:#00b09c;}
 .form-control-feedback{ line-height:50px;}
@@ -15,9 +15,6 @@
 line-height: 50px;
 top: 0px;
 }
-
-
-
     </style>
 
 </head>
@@ -25,17 +22,9 @@ top: 0px;
 
 {{> partials/navbar}}
 
-<!--<div class="container">-->
-    <!--{{> partials/updatesList}}-->
-    <!--</div>-->
-
-<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css"/>
-<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
 <div class="container">
-    <h2>Recent Updates Made</h2>
-    <div class="row">
-        {{> partials/updatesList}}
-    </div>
+    {{> partials/updatesList}}
+    <!-- need to figure out how to remove big space -->
     {{#user}}
     <h2>Add an update</h2>
     <div class="container">
@@ -43,17 +32,20 @@ top: 0px;
             <div class="container">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <input type="text" class="form-control" name="name" autocomplete="off" id="Name" placeholder="Name">
+                        <input type="text" class="form-control" name="name" autocomplete="off" id="Name"
+                               placeholder="Name">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <input type="text" class="form-control" name="dateTime" autocomplete="off" id="date" placeholder="Update date/time">
+                        <input type="text" class="form-control" name="dateTime" autocomplete="off" id="date"
+                               placeholder="Update date/time">
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="form-group">
-                        <input type="text" class="form-control" name="update" autocomplete="off" id="update" placeholder="Update">
+                        <input type="text" class="form-control" name="update" autocomplete="off" id="update"
+                               placeholder="Update">
                         <button type="submit" class="btn main-btn pull-right">Add Update</button>
                     </div>
                 </div>
@@ -63,12 +55,11 @@ top: 0px;
     {{/user}}
     {{^user}}
     {{/user}}
+
 </div>
 
 
 
-
-{{> partials/bootstrapScript}}
 
 </body>
 </html>

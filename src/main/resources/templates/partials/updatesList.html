@@ -1,8 +1,20 @@
-<div>
+<style>
+.list {
 
-    <ol>
+list-style: none;
+padding: 20px 0 20px;
+position: absolute;
+}
+</style>
+
+<div class="container">
+    <div class="page-header text-center">
+        <h2 id="updatelist">Recent Updates</h2>
+    </div>
+    <ol class="list">
         {{#updates}}
-        <li>{{text}} ; {{dateTime}}</li>
+        <li>{{text}} ; <strong>{{dateTime}}</strong></li>
         {{/updates}}
     </ol>
+
 </div>
