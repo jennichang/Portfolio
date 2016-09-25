@@ -96,27 +96,6 @@ public class PortfolioStartController {
     }
 
 
-
-
-
-
-
-///////////////////////////////////
-
-
-
-
-
-
-//
-//    @RequestMapping(path = "/user", method = RequestMethod.GET)
-//    public String user(HttpSession session, Model model) {
-//        String email = (String) session.getAttribute("email");
-//        User user = users.findFirstByEmail(email);
-//        model.addAttribute("user", user);
-//        return "loggedIn";
-//    }
-
     @RequestMapping(path = "/about", method = RequestMethod.GET)
     public String aboutMe(HttpSession session, Model model) {
         String email = (String) session.getAttribute("email");
@@ -126,28 +105,14 @@ public class PortfolioStartController {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     @RequestMapping(path = "/resume", method = RequestMethod.GET)
     public String resume() {
         return "resume";
     }
 
 
-
     @RequestMapping("/logout")
-    public void logout(HttpSession session, HttpServletResponse response) throws IOException {
+    public void logout(HttpSession session, HttpServletResponse response) throws Exception {
         session.invalidate();
         response.sendRedirect("/");
     }
