@@ -36,7 +36,7 @@ public class PortfolioStartController {
     public String user(HttpSession session, Model model) {
         String email = (String) session.getAttribute("email");
         User user = users.findFirstByEmail(email);
-            model.addAttribute("user", user);
+        model.addAttribute("user", user);
         return "loggedIn";
     }
 
@@ -66,6 +66,11 @@ public class PortfolioStartController {
         return "signup";
     }
 
+    @RequestMapping(path = "/resume", method = RequestMethod.GET)
+    public String resume() {
+        return "resume";
+    }
+
     @RequestMapping(path = "/signup", method = RequestMethod.POST)
     public String signupPost(String firstName, String lastName, String email, String password) throws Exception {
         User user = new User(firstName, lastName, email, PasswordStorage.createHash(password));
@@ -78,8 +83,6 @@ public class PortfolioStartController {
         session.invalidate();
         response.sendRedirect("/");
     }
-
-
 
 
 }

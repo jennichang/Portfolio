@@ -9,6 +9,7 @@
 }
 #custom_carousel .item {
 
+    margin-top: 100px;
     color:#000;
     background-color:#eee;
     padding:20px 0;
@@ -39,14 +40,15 @@
     margin-top:5px;
     font-weight:bold
 }
-    </style>
 
+    </style>
 
 
 </head>
 <body>
 
 {{> partials/navbar}}
+
 
 <div class="container-fluid">
     <div id="custom_carousel" class="carousel slide" data-ride="carousel" data-interval="2500">
@@ -57,8 +59,8 @@
                     <div class="row">
                         <div class="col-md-3"><img src="http://placehold.it/350x250" class="img-responsive"></div>
                         <div class="col-md-9">
-                            <h2>Slide 1</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.</p>
+                            <h2>Education</h2>
+                            <p>University of Michigan, Iron Yard, blah blah blah</p>
                         </div>
                     </div>
                 </div>
@@ -68,8 +70,8 @@
                     <div class="row">
                         <div class="col-md-3"><img src="http://placehold.it/350x250" class="img-responsive"></div>
                         <div class="col-md-9">
-                            <h2>Slide 2</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.</p>
+                            <h2>Technical Skills</h2>
+                            <p>Java, SQL, Spring, Hibernate blah blah blah</p>
                         </div>
                     </div>
                 </div>
@@ -79,8 +81,8 @@
                     <div class="row">
                         <div class="col-md-3"><img src="http://placehold.it/350x250" class="img-responsive"></div>
                         <div class="col-md-9">
-                            <h2>Slide 4</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.</p>
+                            <h2>Experience</h2>
+                            <p>Shutterstock, Lieberman, blah blah blah</p>
                         </div>
                     </div>
                 </div>
@@ -90,8 +92,19 @@
                     <div class="row">
                         <div class="col-md-3"><img src="http://placehold.it/350x250" class="img-responsive"></div>
                         <div class="col-md-9">
-                            <h2>Slide 3</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore, magni illum nemo ipsum quod voluptates ab natus nulla possimus incidunt aut neque quaerat mollitia perspiciatis assumenda asperiores consequatur soluta.</p>
+                            <h2>Analytic Skills</h2>
+                            <p>A/B testing, Regression, Cluster analysis, blah blah blah</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-3"><img src="http://placehold.it/350x250" class="img-responsive"></div>
+                        <div class="col-md-9">
+                            <h2>Languages</h2>
+                            <p>Mandarain blah blah blah</p>
                         </div>
                     </div>
                 </div>
@@ -101,17 +114,33 @@
         <!-- End Carousel Inner -->
         <div class="controls">
             <ul class="nav">
-                <li data-target="#custom_carousel" data-slide-to="0" class="active"><a href="#"><img src="http://placehold.it/50x50"><small>Slide One</small></a></li>
-                <li data-target="#custom_carousel" data-slide-to="1"><a href="#"><img src="http://placehold.it/50x50"><small>Slide Two</small></a></li>
-                <li data-target="#custom_carousel" data-slide-to="2"><a href="#"><img src="http://placehold.it/50x50"><small>Slide Three</small></a></li>
-                <li data-target="#custom_carousel" data-slide-to="3"><a href="#"><img src="http://placehold.it/50x50"><small>Slide Four</small></a></li>
+                <li data-target="#custom_carousel" data-slide-to="0" class="active"><a href="#"><img
+                        src="http://placehold.it/50x50">
+                    <small>Education</small>
+                </a></li>
+                <li data-target="#custom_carousel" data-slide-to="1"><a href="#"><img src="http://placehold.it/50x50">
+                    <small>Technical Skills</small>
+                </a></li>
+                <li data-target="#custom_carousel" data-slide-to="2"><a href="#"><img src="http://placehold.it/50x50">
+                    <small>Experience</small>
+                </a></li>
+                <li data-target="#custom_carousel" data-slide-to="3"><a href="#"><img src="http://placehold.it/50x50">
+                    <small>Analytical Skills</small>
+                </a></li>
+                <li data-target="#custom_carousel" data-slide-to="4"><a href="#"><img src="http://placehold.it/50x50">
+                    <small>Languages</small>
+                </a></li>
             </ul>
         </div>
     </div>
     <!-- End Carousel -->
 </div>
 
-
+<br>
+<br>
+<div>
+    <a href="https://drive.google.com/file/d/0B3NlC5QuG5K6WkZPbHFTdlVSYk0/view?usp=sharing">Download PDF Version</a>
+</div>
 
 
 {{> partials/bootstrapScript}}
