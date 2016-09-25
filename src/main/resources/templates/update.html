@@ -31,24 +31,35 @@ top: 0px;
 
 {{> partials/navbar}}
 
-<div class="container">
+<div class="container"> <!-- everything in a container -->
+
+    {{#user}}
     <div class="row">
-        <div class="col-md-4"></div>
+        <!--<div class="col-md-6"></div>-->
         <div class="col-md-4">
-            <h2>Recent Updates</h2>
-            <form action="/add-update" method="post" role="form" id="contact-form" class="contact-form">
-                <input type="text" name="name" placeholder="Update Name"/>
-                <input type="text" name="dateTime" placeholder="Update Date"/>
-                <input type="text" name="update" placeholder="Update Description"/>
+            <h2>To Do List</h2>
+            <form action="/add-update" method="post">
+                <input type="text" name="update" placeholder="Add update"/>
+                <input type="text" name="dateTime" placeholder="Add date of update"/>
+                <button type="submit" class="btn main-btn pull-right">Add Update</button>
             </form>
-            <button type="button" id="add" class="btn btn-info">Add Update</button>
+            {{/user}}
+            {{^user}}
+            {{/user}}
+
+
             <br/><br/>
             <div class="list"></div>
+            {{> partials/updatesList}}
         </div>
         <div class="col-md-4"></div>
     </div>
-</div>
 
+
+
+
+
+</div>
 
 
 
