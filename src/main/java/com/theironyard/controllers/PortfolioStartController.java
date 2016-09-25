@@ -49,7 +49,7 @@ public class PortfolioStartController {
             throw new Exception("Wrong password");
         }
         session.setAttribute("username", email);
-        response.sendRedirect("/loggedin");
+        response.sendRedirect("/user");
         return user;
     }
 
