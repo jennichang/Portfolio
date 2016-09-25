@@ -5,16 +5,18 @@
 
     <style>
         body {
+        margin-top:100px
     padding-top:20px
+    padding-right:200px
 }
 #custom_carousel .item {
 
-    margin-top: 100px;
     color:#000;
     background-color:#eee;
     padding:20px 0;
 }
 #custom_carousel .controls{
+
     overflow-x: auto;
     overflow-y: hidden;
     padding:0;
@@ -46,11 +48,9 @@
 
 </head>
 <body>
-
 {{> partials/navbar}}
 
-
-<div class="container-fluid">
+<div class="container">
     <div id="custom_carousel" class="carousel slide" data-ride="carousel" data-interval="2500">
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
@@ -141,6 +141,11 @@
 <div>
     <a href="https://drive.google.com/file/d/0B3NlC5QuG5K6WkZPbHFTdlVSYk0/view?usp=sharing">Download PDF Version</a>
 </div>
+
+
+
+
+
 
 
 {{> partials/bootstrapScript}}

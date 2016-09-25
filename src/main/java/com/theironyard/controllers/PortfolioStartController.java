@@ -46,6 +46,16 @@ public class PortfolioStartController {
         return "login";
     }
 
+    @RequestMapping(path = "/portfolio", method = RequestMethod.GET)
+    public String portfolio() {
+        return "portfolio";
+    }
+
+    @RequestMapping(path = "/updates", method = RequestMethod.GET)
+    public String updateGet() {
+        return "updates";
+    }
+
 
 
 
