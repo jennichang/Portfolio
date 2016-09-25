@@ -39,7 +39,7 @@
                         </ul>
                     </li>
                 </ul>
-
+                {{^user}}
                 <form action="/login" method="post" class="navbar-form navbar-right" role="search">
                     <div class="form-group">
                         <input type="text" class="form-control" name="email" placeholder="email">
@@ -52,6 +52,13 @@
                         New here ? <a href="/signup"><b>Join Us</b></a>
                     </div>
                 </form>
+                {{/user}}
+
+                {{#user}}
+                <div class="nav navbar-nav navbar-right">
+                    <a href="/logout" method="post" class="navbar-brand"><strong>Logout</strong></a>
+                </div>
+                {{/user}}
 
 
             </div>

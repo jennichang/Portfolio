@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 
 @Controller
 @EnableAutoConfiguration
@@ -72,10 +73,10 @@ public class PortfolioStartController {
         return "redirect:/user";
     }
 
-    @RequestMapping(path = "/logout", method = RequestMethod.POST)
-    public String logout(HttpSession session) {
+    @RequestMapping("/logout")
+    public void logout(HttpSession session, HttpServletResponse response) throws IOException {
         session.invalidate();
-        return "redirect:/";
+        response.sendRedirect("/");
     }
 
 
