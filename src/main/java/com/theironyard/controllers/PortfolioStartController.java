@@ -39,6 +39,14 @@ public class PortfolioStartController {
         return "loggedIn";
     }
 
+    @RequestMapping(path = "/about", method = RequestMethod.GET)
+    public String aboutMe(HttpSession session, Model model) {
+        String email = (String) session.getAttribute("email");
+        User user = users.findFirstByEmail(email);
+        model.addAttribute("user", user);
+        return "aboutme";
+    }
+
 
     @RequestMapping(path = "/login", method = RequestMethod.POST)
     public String login(String email, String password, HttpSession session, HttpServletResponse response) throws Exception {
