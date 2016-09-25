@@ -17,12 +17,12 @@ public class Update {
     String text;
 
     @Column(nullable = false)
-    LocalDateTime dateTime;
+    String dateTime;
 
     public Update() {
     }
 
-    public Update(String text, LocalDateTime dateTime) {
+    public Update(String text, String dateTime) {
         this.text = text;
         this.dateTime = dateTime;
     }
@@ -43,11 +43,11 @@ public class Update {
         this.text = text;
     }
 
-    public LocalDateTime getDateTime() {
+    public String getDateTime() {
         return dateTime;
     }
 
-    public void setDateTime(LocalDateTime dateTime) {
+    public void setDateTime(String dateTime) {
         this.dateTime = dateTime;
     }
 }

@@ -7,6 +7,7 @@ import com.theironyard.services.UserRepository;
 import com.theironyard.utilities.PasswordStorage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.*;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.*;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -65,19 +66,26 @@ public class PortfolioStartController {
     }
 
     @RequestMapping(path = "/updates", method = RequestMethod.GET)
-    public String home(Model model) { // have parameter list contain model
+    public String updates(HttpSession session, Model model) { // have parameter list contain model
         List<Update> updateList = (List) updates.findAll(); // put into list everything in message repository
+        String email = (String) session.getAttribute("email");
+        User user = users.findFirstByEmail(email);
+        model.addAttribute("user", user);
         model.addAttribute("updates", updateList); // give list of messages to model
         return "updates";
     }
 
+
     @RequestMapping(path = "/add-update", method = RequestMethod.POST)
-    public String addUpdate(HttpSession session, String update, LocalDateTime dateTime) {
+    public String addUpdate(HttpSession session, String update,
+                            //@DateTimeFormat(iso = DateTimeFormat.ISO.DATE) @RequestParam LocalDateTime dateTime)
+                            String dateTime) {
         session.setAttribute("update", update);
         Update addedUpdate = new Update(update, dateTime);
         updates.save(addedUpdate);
         return "redirect:/updates";
     }
+
 
     @RequestMapping(path = "/signup", method = RequestMethod.POST)
     public String signupPost(HttpSession session, String firstName, String lastName, String email, String password) throws Exception {
