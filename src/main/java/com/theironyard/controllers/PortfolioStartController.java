@@ -57,7 +57,7 @@ public class PortfolioStartController {
 
     @RequestMapping(path = "/portfolio", method = RequestMethod.GET)
     public String portfolio() {
-        return "portfolio";
+        return "portfoliodeux";
     }
 
     @RequestMapping(path = "/signup", method = RequestMethod.GET)
