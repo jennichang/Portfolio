@@ -3,13 +3,22 @@
 <head>
     {{> partials/bootstrapLink}}
 
-    <style>
-        .timeline {
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
 
-  list-style: none;
-  padding: 20px 0 20px;
-  position: absolute;
-}
+    <style>
+
+    .container{
+    font-family: 'Fjalla One', sans-serif;
+    }
+
+
+    .timeline {
+    list-style: none;
+    padding: 20px 0 20px;
+    position: absolute;
+    }
+
+
 .timeline:before {
   top: 0;
   bottom: 0;
@@ -27,22 +36,27 @@
   float: left;
   clear: left;
 }
+
 .timeline > li:before,
 .timeline > li:after {
   content: " ";
   display: table;
 }
+
 .timeline > li:after {
   clear: both;
 }
+
 .timeline > li:before,
 .timeline > li:after {
   content: " ";
   display: table;
 }
+
 .timeline > li:after {
   clear: both;
 }
+
 .timeline > li > .timeline-panel {
   width: 95%;
   float: left;
@@ -65,6 +79,7 @@
   border-bottom: 15px solid transparent;
   content: " ";
 }
+
 .timeline > li > .timeline-panel:after {
   position: absolute;
   top: 27px;
@@ -76,6 +91,7 @@
   border-bottom: 14px solid transparent;
   content: " ";
 }
+
 .timeline > li > .timeline-badge {
   color: #fff;
   width: 24px;
@@ -95,47 +111,58 @@
   border-bottom-left-radius: 50%;
   */
 }
+
 .timeline > li.timeline-inverted > .timeline-panel {
   float: right;
 }
+
 .timeline > li.timeline-inverted > .timeline-panel:before {
   border-left-width: 0;
   border-right-width: 15px;
   left: -15px;
   right: auto;
 }
+
 .timeline > li.timeline-inverted > .timeline-panel:after {
   border-left-width: 0;
   border-right-width: 14px;
   left: -14px;
   right: auto;
 }
+
 .timeline-badge > a {
   color: #C5C7C5 !important;
 }
+
 .timeline-badge a:hover {
   color: #000 !important;
 }
+
 .timeline-title {
   margin-top: 0;
   color: inherit;
 }
+
 .timeline-body > p,
 .timeline-body > ul {
     padding:20px;
     margin-bottom: 0;
 }
+
 .timeline-body > p + p {
   margin-top: 5px;
 }
+
 .timeline-footer{
     padding:20px;
     background-color:#f4f4f4;
 }
+
 .timeline-footer > a{
     cursor: pointer;
     text-decoration: none;
 }
+
 .tooltip{
 
     position:absolute;
@@ -146,25 +173,29 @@
     font-size:11px;
     opacity:0;
     filter:alpha(opacity=0);
-
 }
+
 .tooltip.in{
     /*opacity:0;
     filter:alpha(opacity=80);*/
-
 }
+
 .tooltip.top{
     margin-top:-2px;
 }
+
 .tooltip.right{
     margin-left:2px;
 }
+
 .tooltip.bottom{
     margin-top:2px;
 }
+
 .tooltip.left{
     margin-left:-2px;
 }
+
 .tooltip.top .tooltip-arrow{
     bottom:0;
     left:0;
@@ -173,6 +204,7 @@
     border-right:5px solid transparent;
     border-top:0 solid #000;
 }
+
 .tooltip.left .tooltip-arrow{
     bottom:0;
     left:0;
@@ -181,6 +213,7 @@
     border-right:5px solid transparent;
     border-top:0 solid #000;
 }
+
 .tooltip.bottom .tooltip-arrow{
     bottom:0;
     left:0;
@@ -189,6 +222,7 @@
     border-right:5px solid transparent;
     border-top:0 solid #000;
 }
+
 .tooltip.right .tooltip-arrow{
     bottom:0;
     left:0;
@@ -197,6 +231,7 @@
     border-right:5px solid transparent;
     border-top:0 solid #000;
 }
+
 .tooltip-inner{
     width:200px;
     padding:3px 8px;
@@ -208,20 +243,24 @@
     -moz-border-radius:0px;
     border-radius:0px;
 }
+
 .tooltip-arrow{
     position:absolute;
     width:0;
     height:0;
 }
+
 .timeline > li.timeline-inverted{
   float: right;
   clear: right;
   margin-top: 30px;
   margin-bottom: 30px;
 }
+
 .timeline > li:nth-child(2){
   margin-top: 60px;
 }
+
 .timeline > li.timeline-inverted > .timeline-badge{
   left: -12px;
 }
@@ -302,13 +341,13 @@
 
                 </div>
                 <div class="timeline-body">
-                    <p>Frogger</p>
-                    <p>bhalh blakjdsflkj adslfkadsfldsfo laskdjfljasdf lkjdsaflkjdsaflkj. lkjadsflj .
-                        lkjasdflkjlsdajkf</p>
+                    <h2>Frogger</h2>
+                    <p>Frogger game with libgdx</p>
 
                 </div>
 
                 <div class="timeline-footer">
+                    <p><a href="http://www.github.com">Github Link</a></p>
                 </div>
             </div>
         </li>
@@ -323,13 +362,13 @@
 
                 </div>
                 <div class="timeline-body">
-                    <p>This portfolio</p>
-                    <p>ljadflkj aldskjdfljk lkdjsf lkadsfjl lkjasdfljk dsf. klajsdflkj . adlkjfalsdjf.
-                        lkjasdlfkjdasf</p>
+                    <h2>This portfolio</h2>
+                    <p>This portfolio with spring, maven, hibernate, bootstrap, heroku</p>
 
                 </div>
 
                 <div class="timeline-footer">
+                    <p><a href="http://www.github.com">Github Link</a></p>
                 </div>
             </div>
         </li>
