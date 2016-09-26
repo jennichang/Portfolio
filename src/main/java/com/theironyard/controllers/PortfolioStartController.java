@@ -67,11 +67,11 @@ public class PortfolioStartController {
 
     @RequestMapping(path = "/updates", method = RequestMethod.GET)
     public String updates(HttpSession session, Model model) { // have parameter list contain model
-        List<Update> updateList = (List) updates.findAll(); // put into list everything in message repository
+        List<Update> updateList = (List) updates.findAll(); // put into list everything in upddate repository
         String email = (String) session.getAttribute("email");
         User user = users.findFirstByEmail(email);
         model.addAttribute("user", user);
-        model.addAttribute("updates", updateList); // give list of messages to model
+        model.addAttribute("updates", updateList); // give list of updates to model
         return "update";
     }
 
