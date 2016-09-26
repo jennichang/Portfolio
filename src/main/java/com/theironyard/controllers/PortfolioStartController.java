@@ -106,7 +106,10 @@ public class PortfolioStartController {
 
 
     @RequestMapping(path = "/resume", method = RequestMethod.GET)
-    public String resume() {
+    public String resume(HttpSession session, Model model) {
+        String email = (String) session.getAttribute("email");
+        User user = users.findFirstByEmail(email);
+        model.addAttribute("user", user);
         return "resume";
     }
 
