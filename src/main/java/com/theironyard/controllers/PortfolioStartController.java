@@ -57,7 +57,7 @@ public class PortfolioStartController {
 
     @RequestMapping(path = "/portfolio", method = RequestMethod.GET)
     public String portfolio() {
-        return "portfoliodeux";
+        return "portfolio";
     }
 
     @RequestMapping(path = "/signup", method = RequestMethod.GET)
@@ -110,7 +110,7 @@ public class PortfolioStartController {
         String email = (String) session.getAttribute("email");
         User user = users.findFirstByEmail(email);
         model.addAttribute("user", user);
-        return "resume";
+        return "resumedeux";
     }
 
 
