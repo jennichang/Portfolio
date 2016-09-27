@@ -1,57 +1,26 @@
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-
-</body>
-</html><!DOCTYPE html>
 <html>
 <head>
     {{> partials/bootstrapLink}}
 
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+
     <style>
-.contact-form{
-margin-top:15px;
-}
-.contact-form .textarea{
-min-height:100px;
-resize:none;
-}
 
-.form-control{
-box-shadow:none;
-border-color:#eee;
-height:49px;
-}
+    .container {
+    font-family: 'Fjalla One', sans-serif;
+    }
 
-.form-control:focus{
-box-shadow:none;
-border-color:#00b09c;
-}
+    .inputfield {
+    width: 90px;
+    height: 390px;
+    border: 1px
+    solid #999999;
+    padding: 5px;
+    }
 
-.form-control-feedback{
-line-height:50px;
-}
 
-.main-btn{
-background:#00b09c;
-border-color:#00b09c;
-color:#fff;
-}
 
-.main-btn:hover{
-background:#00a491;
-color:#fff;
-}
-
-.form-control-feedback {
-line-height: 50px;
-top: 0px;
-}
     </style>
 
 </head>
@@ -63,32 +32,26 @@ top: 0px;
 
     {{#user}}
     <div class="row">
-       <!-- <div class="col-md-6"></div> -->
-        <div class="col-md-4">
-            <h2>Add an Update</h2>
-            <form action="/add-update" method="post">
-                <input type="text" name="update" placeholder="Add update"/>
-                <input type="text" name="dateTime" placeholder="Add date of update"/>
-                <button type="submit" class="btn btn-primary btn-sm">Add Update</button>
-            </form>
-            {{/user}}
-            {{^user}}
-            {{/user}}
+        <!-- <div class="col-md-6"></div> -->
+        <div class="row centered-form">
+            <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+                <h2>Add an Update</h2>
+                <form action="/add-update" method="post">
+                    <input type="text" name="update" placeholder="Add update"/>
+                    <input type="text" name="dateTime" placeholder="Add date of update"/>
+                    <button type="submit" class="btn btn-primary btn-sm">Add Update</button>
+                </form>
+                {{/user}}
+                {{^user}}
+                {{/user}}
 
-
-            <br/><br/>
-            <div class="list"></div>
-            {{> partials/updatesList}}
+                <br/><br/>
+                <div class="list"></div>
+                {{> partials/updatesList}}
+            </div>
         </div>
-        <div class="col-md-4"></div>
     </div>
-
-
-
-
-
 </div>
-
 
 
 </body>
