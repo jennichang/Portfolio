@@ -19,14 +19,21 @@
 {
   flex: 0 0 auto;
 }
+
+.grey {
+color: 	#A9A9A9;
+}
+
+
+
 </style>
 
 
-    <div class="page-header text-center">
-        <h2 id="updatelist">Recent Updates</h2>
-    </div>
-    <ol class="containerCustom">
-        {{#updates}}
-        <li>{{text}} ; <strong>{{dateTime}}</strong></li>
-        {{/updates}}
-    </ol>
+<div class="page-header text-center">
+    <h2 id="updatelist">Recent Updates</h2>
+</div>
+<ol class="containerCustom">
+    {{#updates}}
+    <li>{{text}} ; <span class="grey"><i>{{dateTime}}</i></span></li>
+    {{/updates}}
+</ol>

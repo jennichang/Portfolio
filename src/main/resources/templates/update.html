@@ -11,11 +11,19 @@
     font-family: 'Fjalla One', sans-serif;
     }
 
-    .inputfield {
-    width: 90px;
-    height: 390px;
+    .inputfieldText {
+    width: 275px;
+    height: 25px;
     border: 1px
-    solid #999999;
+    solid #D3D3D3;
+    padding: 5px;
+    }
+
+    .inputfieldDate {
+    width: 150px;
+    height: 25px;
+    border: 1px
+    solid #D3D3D3;
     padding: 5px;
     }
 
@@ -32,13 +40,13 @@
 
     {{#user}}
     <div class="row">
-        <!-- <div class="col-md-6"></div> -->
-        <div class="row centered-form">
-            <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+        <div class="col-md-4"></div>
+        <!--<div class="row centered-form">-->
+            <!--<div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">-->
                 <h2>Add an Update</h2>
                 <form action="/add-update" method="post">
-                    <input type="text" name="update" placeholder="Add update"/>
-                    <input type="text" name="dateTime" placeholder="Add date of update"/>
+                    <input class="inputfieldText" type="text" name="update" placeholder="Add update"/>
+                    <input class="inputfieldDate" type="text" name="dateTime" placeholder="Add date of update"/>
                     <button type="submit" class="btn btn-primary btn-sm">Add Update</button>
                 </form>
                 {{/user}}
